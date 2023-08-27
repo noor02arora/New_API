@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-file-upload-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-file-upload
+  template:
+    metadata:
+      labels:
+        app: flask-file-upload
+    spec:
+      containers:
+        - name: flask-file-upload-container
+          image: noor02arora/flask-file-upload:latest
+          ports:
+            - containerPort: 5500
