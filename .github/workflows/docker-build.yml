@@ -20,7 +20,7 @@ jobs:
         env:
           DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
         run: |
-          echo $DOCKER_TOKEN | docker login -u noor02arora --password-stdin
+          echo "$DOCKER_TOKEN" | docker login -u noor02arora --password-stdin
 
       - name: Push Docker image to Docker Hub
         run: |
